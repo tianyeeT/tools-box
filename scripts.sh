@@ -7,7 +7,7 @@ echo "-------------------------------------------"
 curl -sSLO https://raw.githubusercontent.com/tianyeeT/tools-box/master/install_menu.sh
 
 # 判断是否下载成功
-if [ -f "submenu.sh" ]; then
+if [ -f "install_menu.sh" ]; then
     echo "下载成功，正在执行文件..."
     source install_menu.sh # 执行下载的文件
 else
