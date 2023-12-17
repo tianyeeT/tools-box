@@ -69,6 +69,8 @@ while true; do
             ;;
         *)
             echo -e "${RED}无效选项，请重新输入${NC}"
+            echo "输入的选项不在菜单中，请选择 1、2、3 或 4"
+            exit 1
             ;;
     esac
 done

@@ -40,6 +40,8 @@ function show_submenu {
                 ;;
             *)
                 echo "无效选项，请重新输入"
+                echo "输入的选项不在菜单中，请选择 a、b或c"
+                exit 1
                 ;;
         esac
     done
