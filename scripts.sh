@@ -18,12 +18,14 @@ echo "机器版本信息：$machine_version"
 echo "CPU信息：$cpu_info"
 
 while true; do
-    echo -e "${GREEN}欢迎使用菜单${NC}"
+    echo "-------------------------------------------"
+    printf "%s\n" "|          欢迎使用菜单               |"
+    echo "-------------------------------------------"
     echo -e "${YELLOW}1. ${BLUE}安装Docker${NC}"
     echo -e "${YELLOW}2. ${BLUE}执行操作二${NC}"
     echo -e "${YELLOW}3. ${BLUE}执行操作三${NC}"
     echo -e "${YELLOW}4. ${RED}退出菜单${NC}"
-
+    echo "-------------------------------------------"
     # 提示用户输入选项
     read -p "请输入选项数字: " choice
 
