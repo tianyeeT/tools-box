@@ -1,12 +1,25 @@
 #!/bin/bash
 
+# ANSI颜色码
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # 恢复默认颜色
+
 while true; do
     # 显示菜单选项
-    echo "欢迎使用菜单"
+    echo "${GREEN}欢迎使用菜单${NC}"
     echo "1. 安装Docker"
     echo "2. 执行操作二"
     echo "3. 执行操作三"
     echo "4. 退出菜单"
+        # 显示菜单选项
+    echo -e "${GREEN}欢迎使用菜单${NC}"
+    echo -e "${YELLOW}1. ${BLUE}执行操作一${NC}"
+    echo -e "${YELLOW}2. ${BLUE}执行操作二${NC}"
+    echo -e "${YELLOW}3. ${BLUE}执行操作三${NC}"
+    echo -e "${YELLOW}4. ${RED}退出菜单${NC}"
 
     # 提示用户输入选项
     read -p "请输入选项数字: " choice
@@ -36,11 +49,11 @@ while true; do
             # 在此执行操作三的命令
             ;;
         4)
-            echo "谢谢使用，再见！"
+            echo -e "${RED}谢谢使用，再见！${NC}"
             exit 0 # 退出脚本
             ;;
         *)
-            echo "无效选项，请重新输入"
+            echo -e "${RED}无效选项，请重新输入${NC}"
             ;;
     esac
 done
