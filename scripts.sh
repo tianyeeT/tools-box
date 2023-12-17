@@ -7,8 +7,8 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # 恢复默认颜色
 
-# 获取机器版本信息
-machine_version=$(uname -a)
+# 获取机器版本信息，排除以#开头的行
+machine_version=$(uname -a | sed 's/#.*//')
 
 # 获取CPU信息
 cpu_info=$(cat /proc/cpuinfo | grep "model name" | uniq | cut -d ":" -f 2)
