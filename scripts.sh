@@ -17,9 +17,11 @@ cpu_info=$(cat /proc/cpuinfo | grep "model name" | uniq | cut -d ":" -f 2)
 echo "机器版本信息：$machine_version"
 echo "CPU信息：$cpu_info"
 
+source install_menu.sh
+
 while true; do
     echo "-------------------------------------------"
-    printf "%s\n" "|          欢迎使用菜单               |"
+    printf "%s\n" "|          欢迎使用菜单                   |"
     echo "-------------------------------------------"
     echo -e "${YELLOW}1. ${BLUE}安装Docker${NC}"
     echo -e "${YELLOW}2. ${BLUE}执行操作二${NC}"
@@ -32,18 +34,9 @@ while true; do
     # 根据用户选择执行相应操作
     case $choice in
         1)
-            echo "您选择了安装Docker"
-            if ! type "docker" > /dev/null; then sudo apt-get update && sudo apt-get install ca-certificates curl gnupg
-            sudo install -m 0755 -d /etc/apt/keyrings
-            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-            sudo chmod a+r /etc/apt/keyrings/docker.gpg
-
-            # Add the repository to Apt sources:
-            echo \
-            "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-            $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-            sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io; else echo "Docker已经在该机器上安装";fi
-            # 在此执行操作一的命令
+            echo "您选择了执行操作一"
+            echo "进入操作一子菜单..."
+            show_submenu # 调用子菜单函数
             ;;
         2)
             echo "您选择了执行操作二"
