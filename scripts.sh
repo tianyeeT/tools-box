@@ -3,6 +3,17 @@ echo "-------------------------------------------"
 echo "-------------------------------------------"
 echo "-------------------------------------------"
 
+# 下载文件 submenu.sh
+curl -sSLO https://raw.githubusercontent.com/tianyeeT/tools-box/master/install_menu.sh
+
+# 判断是否下载成功
+if [ -f "submenu.sh" ]; then
+    echo "下载成功，正在执行文件..."
+    source install_menu.sh # 执行下载的文件
+else
+    echo "下载失败或文件不存在"
+fi
+
 # ANSI颜色码
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -24,8 +35,6 @@ echo "CPU信息：$cpu_info"
 # 显示 Linux 发行版和架构信息
 echo "Linux 发行版信息：$linux_version"
 echo "架构信息：$architecture"
-
-source install_menu.sh
 
 while true; do
     echo "-------------------------------------------"
