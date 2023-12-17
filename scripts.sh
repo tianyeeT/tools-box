@@ -64,7 +64,7 @@ while true; do
             # 在此执行操作三的命令
             ;;
         4)
-            echo -e "${RED}谢谢使用，再见！${NC}"
+            echo -e "${RED}谢谢使用!${NC}"
             exit 0 # 退出脚本
             ;;
         *)
