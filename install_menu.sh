@@ -4,11 +4,11 @@ function show_submenu {
     while true; do
         # 显示操作一子菜单选项
         echo "-------------------------------------------"
-        printf "%s\n" "|          操作一子菜单               |"
+        printf "%s\n" "|          操作一子菜单                   |"
         echo "-------------------------------------------"
-        printf "%s\n" "|  a. 安装Docker                     |"
-        printf "%s\n" "|  b. 子菜单选项二                    |"
-        printf "%s\n" "|  c. 返回上级菜单                    |"
+        echo -e "${YELLOW}a. ${BLUE}安装Docker${NC}"
+        echo -e "${YELLOW}b. ${BLUE}子菜单选项二${NC}"
+        echo -e "${YELLOW}c. ${RED}返回上级菜单${NC}"
         echo "-------------------------------------------"
 
         # 提示用户输入选项
