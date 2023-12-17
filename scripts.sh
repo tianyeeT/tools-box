@@ -7,6 +7,16 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # 恢复默认颜色
 
+# 获取机器版本信息
+machine_version=$(uname -a)
+
+# 获取CPU信息
+cpu_info=$(cat /proc/cpuinfo | grep "model name" | uniq | cut -d ":" -f 2)
+
+# 显示机器版本和CPU信息
+echo "机器版本信息：$machine_version"
+echo "CPU信息：$cpu_info"
+
 while true; do
     # 显示菜单选项
     echo "${GREEN}欢迎使用菜单${NC}"
